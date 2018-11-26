@@ -30,7 +30,7 @@ object Main extends App {
   // -----------------------------
 
   println( "HELLO\n" ) // признак начала работы
-  val time0: Long = System.currentTimeMillis
+  val time0 = System.currentTimeMillis
 
   // Загружаем клиентов
   val clients = Source.fromFile(fclients, enc).getLines().map( new Client(_) )
@@ -80,7 +80,7 @@ object Main extends App {
         println( s"${cnt + 1}\t : Orders match: { $a } + { $b }" )
         prnitClients()
 
-        return process( orders - a - b, cnt+1 ) // continue
+        process( orders - a - b, cnt+1 ) // continue
     }
   }
 
@@ -105,6 +105,6 @@ object Main extends App {
     osw.close()
   }
 
-  val time1: Long = System.currentTimeMillis
+  val time1 = System.currentTimeMillis
   println( s"BYE. Elapsed ${time1-time0} ms" )   // признак конца работы
 }
